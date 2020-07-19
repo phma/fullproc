@@ -62,8 +62,16 @@ mpz_class nNotFull(int n)
 
 int main(int argc, char *argv[])
 {
-  int i;
-  for (i=0;i<11;i++)
-    cout<<i<<' '<<nNotFull(i)<<endl;
+  int i,j;
+  mpz_class nf;
+  double nfd;
+  for (i=0;i<15;i++)
+  {
+    nf=nNotFull(i);
+    nfd=nf.get_d();
+    for (j=0;j<i;j++)
+      nfd/=i;
+    cout<<i<<' '<<nf<<' '<<nfd<<endl;
+  }
   return 0;
 }
