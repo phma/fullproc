@@ -15,6 +15,7 @@ mpz_class nperm(vector<int> pattern)
     if (i==0 || pattern[i]!=pattern[i-1])
       j=1;
     ret=ret*(i+1)/j;
+    j++;
   }
   return ret;
 }
@@ -27,7 +28,12 @@ mpz_class nNotFull(int n,vector<int> pattern,set<int> sums)
   if (sums.count(n))
     ret=0;
   else if (pattern.size()>=n)
+  {
     ret=nperm(pattern);
+    //for (i=0;i<pattern.size();i++)
+      //cout<<pattern[i]<<' ';
+    //cout<<' '<<ret<<endl;
+  }
   else
   {
     ret=0;
