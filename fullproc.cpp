@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
   int i,j;
   mpz_class nf;
   double nfd;
-  for (i=0;i<15;i++)
+  for (i=0;i<19;i++)
   {
     nf=nNotFull(i);
     nfd=nf.get_d();
